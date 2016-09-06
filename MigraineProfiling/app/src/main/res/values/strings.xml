@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">Migraine Profiling</string>
+
+    <string name="intro_title_1">Intro 01</string>
+    <string name="intro_desc_1">Details Description about App intro 01</string>
+
+    <string name="intro_title_2">Intro 02</string>
+    <string name="intro_desc_2">Details Description about App intro 02</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <string name="sample_text">Custom fonts in Android an OK way. Are you fed up of Custom Views to set fonts?</string>
+</resources>

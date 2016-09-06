@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+      xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/action_task_views"
+        android:icon="@drawable/ic_menu_views"
+        android:title="Task Views"
+        app:showAsAction="ifRoom" />
+
+    <item
+        android:id="@+id/action_manage"
+        android:icon="@drawable/ic_menu_create_edit"
+        android:title="Manage Tasks"
+        app:showAsAction="always|withText" />
+
+    <item
+        android:id="@+id/action_statistics"
+        android:icon="@drawable/ic_menu_statistics"
+        android:title="Statistics"
+        app:showAsAction="always|withText" />
+
+    <item
+        android:id="@+id/action_close"
+        android:icon="@drawable/ic_menu_close"
+        android:title="Close Menu"
+        app:showAsAction="always|withText" />
+</menu>
