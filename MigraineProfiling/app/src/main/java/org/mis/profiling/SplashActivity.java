@@ -8,6 +8,11 @@ import com.viksaa.sssplash.lib.activity.AwesomeSplash;
 import com.viksaa.sssplash.lib.cnst.Flags;
 import com.viksaa.sssplash.lib.model.ConfigSplash;
 
+import org.mis.profiling.ApplicationMain;
+import org.mis.profiling.R;
+import org.mis.profiling.ui.AppIntroActivity;
+import org.mis.profiling.ui.LandingActivity;
+
 import uk.co.chrisjenx.calligraphy.CalligraphyContextWrapper;
 
 /**
@@ -40,7 +45,6 @@ public class SplashActivity extends AwesomeSplash {
         configSplash.setTitleTextSize(30f); //float value
         configSplash.setAnimTitleDuration(2000);
         configSplash.setAnimTitleTechnique(Techniques.FadeInUp);
-//        configSplash.setTitleFont("fonts/myfont.ttf"); //provide string to your font located in assets/fonts/
     }
 
     // pass context to Calligraphy

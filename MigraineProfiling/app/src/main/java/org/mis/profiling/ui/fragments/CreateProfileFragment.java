@@ -1,4 +1,4 @@
-package org.mis.profiling;
+package org.mis.profiling.ui.fragments;
 
 
 import android.animation.Animator;
@@ -17,8 +17,11 @@ import android.widget.EditText;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
+import org.mis.profiling.ApplicationMain;
+import org.mis.profiling.R;
 import org.mis.profiling.models.User;
 import org.mis.profiling.models.dao.UserDao;
+import org.mis.profiling.ui.LandingActivity;
 
 
 /**

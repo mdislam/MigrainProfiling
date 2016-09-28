@@ -7,7 +7,7 @@
     android:layout_height="match_parent"
     android:background="@drawable/layout_background_gradient"
     android:orientation="vertical"
-    tools:context="org.mis.profiling.MigrainEntryActivity">
+    tools:context="org.mis.profiling.ui.MigrainEntryActivity">
 
     <android.support.design.widget.CoordinatorLayout
         android:id="@+id/view_need_offset"
@@ -27,7 +27,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:text="Manage Task"
+                android:text="Add Entry"
                 android:textColor="@android:color/white"
                 android:textSize="24sp"/>
 
@@ -39,12 +39,13 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-        <include
+        <org.mis.datewizard.DateWizardLayout
             android:id="@+id/day_view"
-            layout="@layout/layout_day_view"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_alignParentTop="true"/>
+            android:layout_alignParentTop="true">
+
+        </org.mis.datewizard.DateWizardLayout>
 
         <LinearLayout
             android:id="@+id/time_view"
@@ -60,10 +61,9 @@
                 android:layout_marginRight="0dp"
                 android:layout_weight="1"
                 android:background="@drawable/time_button_background_shape"
-                android:text="2:00 PM"
+                android:text="Started --:--"
                 android:textColor="@android:color/white"
-                android:textSize="20sp"
-                android:onClick="showTimePickerDialog"/>
+                android:textSize="20sp"/>
 
             <Button
                 android:id="@+id/to_time"
@@ -71,10 +71,9 @@
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:background="@drawable/time_button_background_shape"
-                android:text="- -"
+                android:text="Ended --:--"
                 android:textColor="@android:color/white"
-                android:textSize="20sp"
-                android:onClick="showTimePickerDialog"/>
+                android:textSize="20sp"/>
 
         </LinearLayout>
 
@@ -87,165 +86,73 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
-                android:padding="16dp">
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp">
 
-                <TextView
-                    fontPath="fonts/Raleway-Bold.ttf"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="Level"
-                    android:textSize="20sp"
-                    android:textColor="@android:color/white"/>
-
-                <TextView
-                    fontPath="fonts/Raleway-Light.ttf"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="@string/sample_text"
-                    android:textSize="16sp"
-                    android:textColor="@android:color/darker_gray"/>
-
-                <com.iarcuschin.simpleratingbar.SimpleRatingBar
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    app:srb_starSize="30dp"
-                    app:srb_numberOfStars="10"
-                    app:srb_rating="3.5"
-                    app:srb_stepSize="0.5"
-                    app:srb_borderColor="@android:color/darker_gray"
-                    app:srb_fillColor="@color/colorAccent"
-                    />
-
-                <!--Time of the day-->
-                <TextView
-                    fontPath="fonts/Raleway-Bold.ttf"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="Time of Day"
-                    android:textSize="20sp"
-                    android:layout_marginTop="10dp"
-                    android:textColor="@android:color/white"/>
-
-                <TextView
-                    fontPath="fonts/Raleway-Light.ttf"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="@string/sample_text"
-                    android:textSize="16sp"
-                    android:textColor="@android:color/darker_gray"/>
-
-                <RadioGroup
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal">
-
-                    <RadioButton
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Day"/>
-
-                    <RadioButton
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Afternoon"/>
-
-                    <RadioButton
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Night"/>
-
-                    <RadioButton
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Mid-Night"/>
-
-                </RadioGroup>
-
-
-                <!--Cause-->
-                <TextView
-                    fontPath="fonts/Raleway-Bold.ttf"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="10dp"
-                    android:text="Cause"
-                    android:textSize="20sp"
-                    android:textColor="@android:color/white"/>
-
-                <TextView
-                    fontPath="fonts/Raleway-Light.ttf"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="@string/sample_text"
-                    android:textSize="16sp"
-                    android:textColor="@android:color/darker_gray"/>
-
+                <!--Level of Pain-->
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="horizontal">
 
-                    <CheckBox
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Check1"/>
+                    <include layout="@layout/layout_left_step_view"/>
 
-                    <CheckBox
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Check2"/>
-
-                    <CheckBox
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Check3"/>
-
-                    <CheckBox
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Check4"/>
+                    <include layout="@layout/layout_pain_level"/>
 
                 </LinearLayout>
 
-                <android.support.design.widget.TextInputLayout
+                <!--Time of Day-->
+                <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="10dp">
+                    android:orientation="horizontal">
 
-                    <EditText
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:hint="Remedy"
-                        android:inputType="text"/>
+                    <include layout="@layout/layout_left_step_view"/>
 
-                </android.support.design.widget.TextInputLayout>
+                    <include layout="@layout/layout_time_of_day"/>
 
-                <android.support.design.widget.TextInputLayout
+                </LinearLayout>
+
+
+                <!--Symptoms-->
+                <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
 
-                    <EditText
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:hint="Medicine"
-                        android:inputType="text"/>
+                    <include layout="@layout/layout_left_step_view"/>
 
-                </android.support.design.widget.TextInputLayout>
+                    <include layout="@layout/layout_symptoms"/>
+
+                </LinearLayout>
+
+
+                <!--Symptoms-->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <include layout="@layout/layout_left_step_view"/>
+
+                    <include layout="@layout/layout_remedy"/>
+
+                </LinearLayout>
 
             </LinearLayout>
 
         </ScrollView>
 
-
-
-        <android.support.design.widget.FloatingActionButton
+        <!--<android.support.design.widget.FloatingActionButton
             android:id="@+id/fab"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentBottom="true"
-            android:layout_centerHorizontal="true"
+            android:layout_alignParentRight="true"
             android:layout_marginBottom="10dp"
-            android:src="@drawable/ic_done_black"/>
+            android:layout_marginRight="10dp"
+            android:src="@drawable/ic_done_black"/>-->
 
     </RelativeLayout>
 

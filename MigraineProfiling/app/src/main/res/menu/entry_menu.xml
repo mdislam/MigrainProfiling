@@ -3,9 +3,14 @@
       xmlns:tools="http://schemas.android.com/tools"
       tools:context="org.mygeotrust.testclients.ClientActivity01">
 
-    <item android:id="@+id/action_calendar"
+    <!--<item android:id="@+id/action_calendar"
           android:title="Exit App"
           android:orderInCategory="100"
           android:icon="@drawable/ic_month_view"
+          app:showAsAction="always|withText"/>-->
+
+    <item android:id="@+id/action_save"
+          android:title="SAVE"
+          android:orderInCategory="100"
           app:showAsAction="always|withText"/>
 </menu>

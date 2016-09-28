@@ -1,0 +1,59 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:layout_marginLeft="12dp"
+              android:layout_marginStart="12dp"
+              android:layout_marginTop="24dp"
+              android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TextView
+            fontPath="fonts/Ubuntu-Bold.ttf"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Time of Day"
+            android:textSize="20sp"
+            android:textColor="@android:color/white"
+            android:id="@+id/tv_day_time"/>
+
+        <ImageButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@+id/tv_day_time"
+            android:background="@android:color/transparent"
+            android:src="@drawable/ic_info_dialog"
+            android:layout_marginLeft="10dp"
+            android:id="@+id/btn_day_time_info"/>
+    </RelativeLayout>
+
+    <RadioGroup
+        android:id="@+id/group_time_of_day"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Day"/>
+
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Afternoon"/>
+
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Night"/>
+
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Mid-Night"/>
+
+    </RadioGroup>
+
+</LinearLayout>

@@ -12,7 +12,7 @@ public class Generator {
         addUser(schema);
         addMigrainEntry(schema);
 
-        new DaoGenerator().generateAll(schema, "D:\\PROJECTS\\MigraineProfiling\\app\\src\\main\\java");
+        new DaoGenerator().generateAll(schema, "D:\\PROJECTS\\MigrainProfiling\\MigraineProfiling\\app\\src\\main\\java");
     }
 
     private static void addUser(Schema schema){
@@ -29,9 +29,9 @@ public class Generator {
         migrainEntry.addIdProperty().autoincrement();
         migrainEntry.addDateProperty("started").notNull();
         migrainEntry.addDateProperty("ended").notNull();
-        migrainEntry.addIntProperty("level").notNull();
+        migrainEntry.addDoubleProperty("level").notNull();
         migrainEntry.addStringProperty("timeofday");
-        migrainEntry.addStringProperty("cause");
+        migrainEntry.addStringProperty("symptoms");
         migrainEntry.addStringProperty("remedy");
         migrainEntry.addStringProperty("medicine");
     }

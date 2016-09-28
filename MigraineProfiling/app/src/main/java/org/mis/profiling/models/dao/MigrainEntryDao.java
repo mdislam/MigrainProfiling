@@ -26,9 +26,9 @@ public class MigrainEntryDao extends AbstractDao<MigrainEntry, Long> {
         public final static Property Id = new Property(0, Long.class, "id", true, "_id");
         public final static Property Started = new Property(1, java.util.Date.class, "started", false, "STARTED");
         public final static Property Ended = new Property(2, java.util.Date.class, "ended", false, "ENDED");
-        public final static Property Level = new Property(3, int.class, "level", false, "LEVEL");
+        public final static Property Level = new Property(3, double.class, "level", false, "LEVEL");
         public final static Property Timeofday = new Property(4, String.class, "timeofday", false, "TIMEOFDAY");
-        public final static Property Cause = new Property(5, String.class, "cause", false, "CAUSE");
+        public final static Property Symptoms = new Property(5, String.class, "symptoms", false, "SYMPTOMS");
         public final static Property Remedy = new Property(6, String.class, "remedy", false, "REMEDY");
         public final static Property Medicine = new Property(7, String.class, "medicine", false, "MEDICINE");
     };
@@ -49,9 +49,9 @@ public class MigrainEntryDao extends AbstractDao<MigrainEntry, Long> {
                 "\"_id\" INTEGER PRIMARY KEY AUTOINCREMENT ," + // 0: id
                 "\"STARTED\" INTEGER NOT NULL ," + // 1: started
                 "\"ENDED\" INTEGER NOT NULL ," + // 2: ended
-                "\"LEVEL\" INTEGER NOT NULL ," + // 3: level
+                "\"LEVEL\" REAL NOT NULL ," + // 3: level
                 "\"TIMEOFDAY\" TEXT," + // 4: timeofday
-                "\"CAUSE\" TEXT," + // 5: cause
+                "\"SYMPTOMS\" TEXT," + // 5: symptoms
                 "\"REMEDY\" TEXT," + // 6: remedy
                 "\"MEDICINE\" TEXT);"); // 7: medicine
     }
@@ -73,16 +73,16 @@ public class MigrainEntryDao extends AbstractDao<MigrainEntry, Long> {
         }
         stmt.bindLong(2, entity.getStarted().getTime());
         stmt.bindLong(3, entity.getEnded().getTime());
-        stmt.bindLong(4, entity.getLevel());
+        stmt.bindDouble(4, entity.getLevel());
  
         String timeofday = entity.getTimeofday();
         if (timeofday != null) {
             stmt.bindString(5, timeofday);
         }
  
-        String cause = entity.getCause();
-        if (cause != null) {
-            stmt.bindString(6, cause);
+        String symptoms = entity.getSymptoms();
+        if (symptoms != null) {
+            stmt.bindString(6, symptoms);
         }
  
         String remedy = entity.getRemedy();
@@ -109,9 +109,9 @@ public class MigrainEntryDao extends AbstractDao<MigrainEntry, Long> {
             cursor.isNull(offset + 0) ? null : cursor.getLong(offset + 0), // id
             new java.util.Date(cursor.getLong(offset + 1)), // started
             new java.util.Date(cursor.getLong(offset + 2)), // ended
-            cursor.getInt(offset + 3), // level
+            cursor.getDouble(offset + 3), // level
             cursor.isNull(offset + 4) ? null : cursor.getString(offset + 4), // timeofday
-            cursor.isNull(offset + 5) ? null : cursor.getString(offset + 5), // cause
+            cursor.isNull(offset + 5) ? null : cursor.getString(offset + 5), // symptoms
             cursor.isNull(offset + 6) ? null : cursor.getString(offset + 6), // remedy
             cursor.isNull(offset + 7) ? null : cursor.getString(offset + 7) // medicine
         );
@@ -124,9 +124,9 @@ public class MigrainEntryDao extends AbstractDao<MigrainEntry, Long> {
         entity.setId(cursor.isNull(offset + 0) ? null : cursor.getLong(offset + 0));
         entity.setStarted(new java.util.Date(cursor.getLong(offset + 1)));
         entity.setEnded(new java.util.Date(cursor.getLong(offset + 2)));
-        entity.setLevel(cursor.getInt(offset + 3));
+        entity.setLevel(cursor.getDouble(offset + 3));
         entity.setTimeofday(cursor.isNull(offset + 4) ? null : cursor.getString(offset + 4));
-        entity.setCause(cursor.isNull(offset + 5) ? null : cursor.getString(offset + 5));
+        entity.setSymptoms(cursor.isNull(offset + 5) ? null : cursor.getString(offset + 5));
         entity.setRemedy(cursor.isNull(offset + 6) ? null : cursor.getString(offset + 6));
         entity.setMedicine(cursor.isNull(offset + 7) ? null : cursor.getString(offset + 7));
      }

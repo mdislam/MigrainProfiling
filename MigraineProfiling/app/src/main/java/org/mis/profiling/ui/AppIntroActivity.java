@@ -1,12 +1,15 @@
-package org.mis.profiling;
+package org.mis.profiling.ui;
 
-import android.content.Intent;
 import android.os.Bundle;
 
 import com.heinrichreimersoftware.materialintro.app.IntroActivity;
 import com.heinrichreimersoftware.materialintro.app.NavigationPolicy;
 import com.heinrichreimersoftware.materialintro.slide.FragmentSlide;
 import com.heinrichreimersoftware.materialintro.slide.SimpleSlide;
+
+import org.mis.profiling.ApplicationMain;
+import org.mis.profiling.R;
+import org.mis.profiling.ui.fragments.CreateProfileFragment;
 
 public class AppIntroActivity extends IntroActivity {
 

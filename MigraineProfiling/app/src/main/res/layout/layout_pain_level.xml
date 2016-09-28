@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              xmlns:app="http://schemas.android.com/apk/res-auto"
+              android:orientation="vertical"
+              android:layout_marginTop="24dp"
+              android:layout_marginStart="12dp"
+              android:layout_marginLeft="12dp">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TextView
+            fontPath="fonts/Ubuntu-Bold.ttf"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Level"
+            android:textSize="20sp"
+            android:textColor="@android:color/white"
+            android:id="@+id/tv_level"/>
+
+        <ImageButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@+id/tv_level"
+            android:background="@android:color/transparent"
+            android:src="@drawable/ic_info_dialog"
+            android:layout_marginLeft="10dp"
+            android:id="@+id/btn_level_info"/>
+    </RelativeLayout>
+
+    <LinearLayout
+        android:id="@+id/linearLayoutContent"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <com.iarcuschin.simpleratingbar.SimpleRatingBar
+            android:id="@+id/level_rating"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:srb_starSize="25dp"
+            app:srb_numberOfStars="10"
+            app:srb_rating="3.5"
+            app:srb_stepSize="0.5"
+            app:srb_borderColor="@android:color/darker_gray"
+            app:srb_fillColor="@color/colorAccent"
+            />
+
+    </LinearLayout>
+
+</LinearLayout>

@@ -30,7 +30,7 @@ public class ApplicationMain extends Application {
     public void onCreate() {
         super.onCreate();
         CalligraphyConfig.initDefault(new CalligraphyConfig.Builder()
-                .setDefaultFontPath("fonts/Raleway-Regular.ttf")
+                .setDefaultFontPath("fonts/Ubuntu-Regular.ttf")
                 .setFontAttrId(R.attr.fontPath)
                 .build()
         );

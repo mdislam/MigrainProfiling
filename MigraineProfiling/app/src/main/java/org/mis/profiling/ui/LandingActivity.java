@@ -1,4 +1,4 @@
-package org.mis.profiling;
+package org.mis.profiling.ui;
 
 import android.content.Context;
 import android.content.Intent;
@@ -16,13 +16,15 @@ import android.widget.TextView;
 import com.github.rubensousa.floatingtoolbar.FloatingToolbar;
 import com.jaeger.library.StatusBarUtil;
 
+import org.mis.profiling.ApplicationMain;
+import org.mis.profiling.R;
+
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
-import java.util.Date;
 
 import uk.co.chrisjenx.calligraphy.CalligraphyContextWrapper;
 
-public class LandingActivity extends AppCompatActivity {
+public class LandingActivity extends AppBaseActivity {
     private static final String TAG = LandingActivity.class.getSimpleName();
 
     private ApplicationMain appGlobal;
@@ -122,12 +124,6 @@ public class LandingActivity extends AppCompatActivity {
                 monthText.setText(getMonthYear(cal));
             }
         });
-    }
-
-    // pass context to Calligraphy
-    @Override
-    protected void attachBaseContext(Context newBase) {
-        super.attachBaseContext(CalligraphyContextWrapper.wrap(newBase));
     }
 
     @Override

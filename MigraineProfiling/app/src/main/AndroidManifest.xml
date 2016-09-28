@@ -10,7 +10,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
-            android:name=".AppIntroActivity"
+            android:name=".ui.AppIntroActivity"
             android:theme="@style/Theme.Intro">
         </activity>
         <activity
@@ -23,10 +23,10 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".LandingActivity"
+            android:name=".ui.LandingActivity"
             android:theme="@style/AppBaseTheme">
         </activity>
-        <activity android:name=".MigrainEntryActivity"
+        <activity android:name=".ui.MigrainEntryActivity"
                   android:theme="@style/AppBaseTheme">
         </activity>
     </application>

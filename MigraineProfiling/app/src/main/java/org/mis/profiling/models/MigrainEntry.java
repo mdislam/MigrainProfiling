@@ -11,9 +11,9 @@ public class MigrainEntry {
     private java.util.Date started;
     /** Not-null value. */
     private java.util.Date ended;
-    private int level;
+    private double level;
     private String timeofday;
-    private String cause;
+    private String symptoms;
     private String remedy;
     private String medicine;
 
@@ -24,13 +24,13 @@ public class MigrainEntry {
         this.id = id;
     }
 
-    public MigrainEntry(Long id, java.util.Date started, java.util.Date ended, int level, String timeofday, String cause, String remedy, String medicine) {
+    public MigrainEntry(Long id, java.util.Date started, java.util.Date ended, double level, String timeofday, String symptoms, String remedy, String medicine) {
         this.id = id;
         this.started = started;
         this.ended = ended;
         this.level = level;
         this.timeofday = timeofday;
-        this.cause = cause;
+        this.symptoms = symptoms;
         this.remedy = remedy;
         this.medicine = medicine;
     }
@@ -63,11 +63,11 @@ public class MigrainEntry {
         this.ended = ended;
     }
 
-    public int getLevel() {
+    public double getLevel() {
         return level;
     }
 
-    public void setLevel(int level) {
+    public void setLevel(double level) {
         this.level = level;
     }
 
@@ -79,12 +79,12 @@ public class MigrainEntry {
         this.timeofday = timeofday;
     }
 
-    public String getCause() {
-        return cause;
+    public String getSymptoms() {
+        return symptoms;
     }
 
-    public void setCause(String cause) {
-        this.cause = cause;
+    public void setSymptoms(String symptoms) {
+        this.symptoms = symptoms;
     }
 
     public String getRemedy() {

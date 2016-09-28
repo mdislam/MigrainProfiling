@@ -7,7 +7,7 @@
     android:layout_height="match_parent"
     android:background="@drawable/layout_background_gradient"
     android:orientation="vertical"
-    tools:context="org.mis.profiling.LandingActivity">
+    tools:context="org.mis.profiling.ui.LandingActivity">
 
     <android.support.design.widget.CoordinatorLayout
         android:id="@+id/view_need_offset"
