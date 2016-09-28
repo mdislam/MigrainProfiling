@@ -17,6 +17,10 @@ import java.util.Calendar;
 import java.util.Date;
 import java.util.Locale;
 
+import static org.mis.datewizard.Utils.getDate;
+import static org.mis.datewizard.Utils.getMonthName;
+import static org.mis.datewizard.Utils.getWeekDay;
+
 /**
  * Created by mis on 9/27/2016.
  */
@@ -134,50 +138,5 @@ public class DateWizardLayout extends RelativeLayout implements View.OnClickList
         tvDate.setText("" + day);
         tvWeekDay.setText(getWeekDay(getDate(year, month, day)));
         tvMonthYear.setText("" + getMonthName(month) + " " + year);
-    }
-
-    /**
-     * convert to Date. This is one of the many ways.
-     * @param year
-     * @param month
-     * @param day
-     * @return
-     */
-    public Date getDate(int year, int month, int day){
-        String dateString = String.format("%d-%d-%d", year, month + 1, day);
-        Date date = null;
-        try {
-            date = new SimpleDateFormat("yyyy-M-d").parse(dateString);
-        } catch (ParseException e) {
-            e.printStackTrace();
-        }
-
-        return date;
-    }
-
-    /**
-     * get the day of week from the Date based on specific locale.
-     * @param date
-     * @return
-     */
-    public String getWeekDay(Date date){
-        String dayOfWeek = "";
-
-        dayOfWeek = new SimpleDateFormat("EEEE", Locale.ENGLISH).format(date);
-
-        return dayOfWeek;
-    }
-
-    /**
-     *
-     * @param month
-     * @return
-     */
-    public String getMonthName(int month){
-        String val = "";
-
-        val = new DateFormatSymbols().getMonths()[month];
-
-        return val;
     }
 }

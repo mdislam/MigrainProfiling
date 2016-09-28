@@ -17,6 +17,7 @@ import com.jaeger.library.StatusBarUtil;
 
 import org.mis.datewizard.DateWizardLayout;
 import org.mis.datewizard.DateWizardListener;
+import org.mis.datewizard.Utils;
 import org.mis.profiling.ApplicationMain;
 import org.mis.profiling.R;
 import org.mis.profiling.custom.views.DateTimePickerFragment;
@@ -232,7 +233,7 @@ public class MigrainEntryActivity extends AppBaseActivity implements View.OnClic
 
     @Override
     public void onDateWizardUpdated(int date, int month, int year) {
-        Log.d(TAG, "result: " + date + "/" + dayView.getMonthName(month) + "/" + year);
+        Log.d(TAG, "result: " + date + "/" + Utils.getMonthName(month) + "/" + year);
         mYear = year;
         mMonth = month;
         mDay = date;
